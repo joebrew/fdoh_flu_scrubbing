@@ -1,12 +1,15 @@
 library(readxl)
 library(readr)
+## (If you get an error in any of the above two lines, run the following):
+# install.packages('readxl')
+# install.packages('readr')
 # flshots <- read_excel('FLShotsHeaders.xlsx')
 
 # CHANGE THE BELOW LINE
 ab <- read_excel('private_data_goes_here.xls')
+# ab <- read_excel('AbsenteeData.xlsx')
 
-# Recode person ID
-ab$personID <- as.numeric(factor(ab$personID))
+# Don't recode person ID (needed to merge with vaccination datas)
 
 # Recode teacher name
 ab$teacherName <- as.numeric(factor(ab$teacherName))
